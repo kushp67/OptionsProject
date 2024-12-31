@@ -293,7 +293,7 @@ if st.sidebar.button("Run Simulation"):
     #Plotting the final prices
     st.subheader("Final Price Distribution")
     fig_hist, ax_hist = plt.subplots()
-    ax_hist.hist(final_prices, bins='auto')
+    ax_hist.hist(final_prices, bins='auto', range=(lower_percentile[-1], upper_percentile[-1]))
     ax_hist.axvline(mean_final_price, color='r', linestyle='dashed', linewidth=2, label='Mean')
     ax_hist.axvline(median_final_price, color='g', linestyle='dashed', linewidth=2, label='Median')
     ax_hist.axvline(target_price, color='r', linestyle='solid', linewidth=2, label='Target')
